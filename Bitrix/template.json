@@ -1,0 +1,92 @@
+{
+    "deals_stage_history": {
+        "api_url": "crm.stagehistory.list",
+        "table_name": "deals_stage_history_tmp",
+        "delta_field": "CREATED_TIME",
+        "columns": [
+              "id",
+              "type_id",
+              "owner_id",
+              "created_time",
+              "category_id",
+              "stage_semantic_id",
+              "stage_id",
+              "project_id"
+        ]
+    },
+    "dim_status": {
+        "api_url": "crm.status.list",
+        "table_name": "dim_status",
+        "columns": [
+            "id",
+            "entity_id",
+            "status_id",
+            "name",
+            "sort",
+            "category_id",
+            "project_id"
+        ]
+    },
+    "dim_deals_categories": {
+        "api_url": "crm.category.list",
+        "table_name": "dim_deals_categories",
+        "columns": [
+            "id",
+            "name",
+            "sort",
+            "entitytypeid",
+            "project_id"
+        ]
+    },
+    "fact_deals": {
+        "api_url": "crm.deal.list",
+        "table_name": "fact_deals_tmp",
+        "delta_field": "DATE_MODIFY",
+        "columns": [
+            "id",
+            "stage_id",
+            "opportunity",
+            "lead_id",
+            "date_create",
+            "date_modify",
+            "category_id",
+            "utm_source",
+            "project_id"
+        ]
+    },
+    "fact_leads": {
+        "api_url": "crm.lead.list",
+        "table_name": "fact_leads_tmp",
+        "delta_field": "DATE_MODIFY",
+        "columns": [
+            "id",
+            "title",
+            "name",
+            "second_name",
+            "last_name",
+            "company_title",
+            "company_id",
+            "contact_id",
+            "is_return_customer",
+            "birthdate",
+            "status_id",
+            "status_description",
+            "comments",
+            "opportunity",
+            "is_manual_opportunity",
+            "assigned_by_id",
+            "created_by_id",
+            "modify_by_id",
+            "date_create",
+            "date_modify",
+            "date_closed",
+            "opened",
+            "utm_source",
+            "utm_medium",
+            "utm_campaign",
+            "utm_content",
+            "utm_term",
+            "project_id"
+        ]
+    }
+}

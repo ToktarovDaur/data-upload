@@ -1,0 +1,169 @@
+-- Drop table
+
+-- DROP TABLE deals_categories;
+
+CREATE TABLE IF NOT EXISTS dim_deals_categories (
+	id text NULL,
+	"name" text NULL,
+	sort int4 NULL,
+	entitytypeid int2 NULL,
+	project_id text NULL,
+	insert_date timestamp NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS fact_deals_tmp (
+	id int4 NULL,
+	stage_id text NULL,
+	opportunity text NULL,
+	lead_id int4 NULL,
+	date_create timestamp NULL,
+	date_modify timestamp NULL,
+	category_id text NULL,
+	utm_source text NULL,
+	project_id text NULL,
+	insert_date timestamp NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+-- Drop table
+
+-- DROP TABLE fact_deals;
+
+CREATE TABLE IF NOT EXISTS fact_deals (
+	id int4 NULL,
+	stage_id text NULL,
+	opportunity text NULL,
+	lead_id int4 NULL,
+	date_create timestamp NULL,
+	date_modify timestamp NULL,
+	category_id text NULL,
+	utm_source text NULL,
+	project_id text NULL
+);
+
+
+
+-- Drop table
+
+-- DROP TABLE fact_leads_tmp;
+
+CREATE TABLE IF NOT EXISTS fact_leads_tmp (
+	id int4 NULL,
+	title text NULL,
+	"name" text NULL,
+	second_name text NULL,
+	last_name text NULL,
+	company_title text NULL,
+	company_id text NULL,
+	contact_id text NULL,
+	is_return_customer text NULL,
+	birthdate text NULL,
+	status_id text NULL,
+	status_description text NULL,
+	"comments" text NULL,
+	opportunity text NULL,
+	is_manual_opportunity text NULL,
+	assigned_by_id int4 NULL,
+	created_by_id int4 NULL,
+	modify_by_id int4 NULL,
+	date_create timestamp NULL,
+	date_modify timestamp NULL,
+	date_closed timestamp NULL,
+	opened text NULL,
+	utm_source text NULL,
+	utm_medium text NULL,
+	utm_campaign text NULL,
+	utm_content text NULL,
+	utm_term text NULL,
+	project_id text NULL,
+	insert_date timestamp NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+-- DROP TABLE fact_leads_tmp;
+
+CREATE TABLE IF NOT EXISTS fact_leads (
+	id int4 NULL,
+	title text NULL,
+	"name" text NULL,
+	second_name text NULL,
+	last_name text NULL,
+	company_title text NULL,
+	company_id text NULL,
+	contact_id text NULL,
+	is_return_customer text NULL,
+	birthdate text NULL,
+	status_id text NULL,
+	status_description text NULL,
+	"comments" text NULL,
+	opportunity text NULL,
+	is_manual_opportunity text NULL,
+	assigned_by_id int4 NULL,
+	created_by_id int4 NULL,
+	modify_by_id int4 NULL,
+	date_create timestamp NULL,
+	date_modify timestamp NULL,
+	date_closed timestamp NULL,
+	opened text NULL,
+	utm_source text NULL,
+	utm_medium text NULL,
+	utm_campaign text NULL,
+	utm_content text NULL,
+	utm_term text NULL,
+	project_id text NULL
+);
+
+
+-- Drop table
+
+-- DROP TABLE dim_status;
+
+CREATE TABLE IF NOT EXISTS dim_status (
+	id int4 NULL,
+	entity_id text NULL,
+	status_id text NULL,
+	"name" text NULL,
+	sort text NULL,
+	category_id text NULL,
+	insert_date timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+	project_id text NULL
+);
+
+
+-- Drop table
+
+-- DROP TABLE deals_stage_history_tmp;
+
+CREATE TABLE IF NOT EXISTS deals_stage_history_tmp (
+	id text NULL,
+	type_id text NULL,
+	owner_id text NULL,
+	created_time timestamp NULL,
+	category_id text NULL,
+	stage_semantic_id text NULL,
+	stage_id text NULL,
+	insert_date timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+	project_id text NULL
+);
+
+
+
+
+-- Drop table
+
+-- DROP TABLE deals_stage_history;
+
+CREATE TABLE IF NOT EXISTS deals_stage_history (
+	id text NULL,
+	type_id text NULL,
+	owner_id text NULL,
+	created_time timestamp NULL,
+	category_id text NULL,
+	stage_semantic_id text NULL,
+	stage_id text NULL,
+	project_id text NULL
+);
